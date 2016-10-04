@@ -1,0 +1,30 @@
+#:kivy 1.9.1
+
+
+<FluffyKidney>:
+	canvas:
+		Color:
+			rgba: 1,1,1,1
+		Rectangle:
+			size: 20,self.height
+			pos: 290,0
+	cols: 2
+	ScrollView:
+		size_hint_x: None
+		width: 300
+		GridLayout
+			cols: 1
+			size_hint_y:None
+			height: self.minimum_height
+	GridLayout:
+		cols:1
+		FluffyRecipe:
+
+
+<FluffyRecipe>:
+
+<RecipeOverview>:
+
+<RecipeIngredients>:
+
+<RecipeSteps>:
