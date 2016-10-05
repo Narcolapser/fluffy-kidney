@@ -1,0 +1,24 @@
+{
+	"name":"biscuits",
+	"ingredients":
+	[
+		{"ingredient":"flour","quantity":"100","units":"g"},
+		{"ingredient":"milk","quantity":"40","units":"g"},
+		{"ingredient":"butter","quantity":"30","units":"g"},
+		{"ingredient":"baking powder","quantity":"2","units":"g"},
+		{"ingredient":"sugar","quantity":"5","units":"g"}
+	],
+	"instructions":
+	[
+		"set oven to 400",
+		"mix dry ingrediants",
+		"dice butter and mix into dry ingrediants",
+		"mixin milk and kneed as little as possible, but enough to get it consistent",
+		"roll out and cut",
+	],
+	"misc":
+	[
+		{"name":"Prep Time","value":"15 minutes"},
+		{"name":"Cook Time","value":"12 minutes"}
+	]
+}

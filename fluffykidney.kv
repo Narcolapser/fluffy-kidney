@@ -10,6 +10,7 @@
 			pos: 290,0
 	cols: 2
 	ScrollView:
+		id: recipe_list
 		size_hint_x: None
 		width: 300
 		GridLayout
@@ -17,14 +18,33 @@
 			size_hint_y:None
 			height: self.minimum_height
 	GridLayout:
+		id: info_grid
 		cols:1
-		FluffyRecipe:
 
 
 <FluffyRecipe>:
+	
+<RecipePane>:
+	canvas:
+		Color:
+			rgba: 0.7,0.7,0.7,1
+		Rectangle:
+			size: self.size
+			pos: self.pos
+		Color:
+			rgba: 0.5,0.5,0.5,1
+		Rectangle:
+			size: self.size[0] - 20, self.size[1] - 20
+			pos: self.pos[0] + 10, self.pos[1] + 10
 
 <RecipeOverview>:
+	Label:
+		text: root.name
 
 <RecipeIngredients>:
+	Label:
+		text: root.name
 
 <RecipeSteps>:
+	Label:
+		text: root.name
