@@ -1,0 +1,23 @@
+{
+	"name":"gravy",
+	"ingredients":
+	[
+		{"ingredient":"flour","quantity":"30","units":"g"},
+		{"ingredient":"butter","quantity":"30","units":"g"},
+		{"ingredient":"beef broth","quantity":"150","units":"g"}
+	],
+	"instructions":
+	[
+		"melt better in small pot",
+		"add flour and mix together",
+		"when you start seeing little bubbles add a small amount of the broth.",
+		"mix until all the broth is aborbed.",
+		"add more broth and repeat untill all the broth is added",
+		"season to taste"
+	],
+	"misc":
+	[
+		{"name":"Prep Time","value":"15 minutes"},
+		{"name":"Cook Time","value":"12 minutes"}
+	]
+}
