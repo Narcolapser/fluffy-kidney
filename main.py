@@ -2,6 +2,8 @@ from os.path import join
 import os
 import json
 
+import allrecipes
+
 import kivy
 kivy.require('1.9.1') # replace with your current kivy version !
 
@@ -73,6 +75,10 @@ class FluffyKidney(GridLayout):
 				recipe = ListRecipe()
 				recipe.loadRecipe(val,grid)
 				rlist.add_widget(recipe)
+		#rUrl = '''http://allrecipes.com/recipe/24352/easy-apple-cinnamon-muffins/'''
+		#recipe = ListRecipe()
+		#recipe.loadRecipe(allrecipes.getRecipe(rUrl),grid)
+		#rlist.add_widget(recipe)
 
 class FluffyKidneyApp(App):
 

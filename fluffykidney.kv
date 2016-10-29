@@ -43,16 +43,37 @@
 		Rectangle:
 			size: self.size[0] - 20, self.size[1] - 20
 			pos: self.pos[0] + 10, self.pos[1] + 10
-	orientation: 'vertical'
+	size_hint_x: 1
+
 
 <RecipeOverview>:
-	Label:
-		text: root.name
+	grid: contents
+	GridLayout:
+		id: contents
+		cols: 1
+		size_hint_y: None
+		height: self.minimum_height
+		Label:
+			text: root.name
 
 <RecipeIngredients>:
-	Label:
-		text: root.name
+	grid: contents
+	GridLayout:
+		id: contents
+		cols: 1
+		size_hint_y: None
+		height: self.minimum_height
+		Label:
+			text: root.name
 
 <RecipeSteps>:
-	Label:
-		text: root.name
+	grid: contents
+	width_p: self.size[0]
+	GridLayout:
+		id: contents
+		cols: 1
+		size_hint_y: None
+		height: self.minimum_height
+		Label:
+			text_size: self.width - 20, None
+			text: root.name

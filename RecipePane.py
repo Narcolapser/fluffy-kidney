@@ -2,15 +2,16 @@ from kivy.app import App
 from kivy.uix.label import Label
 
 from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.scrollview import ScrollView
 from kivy.uix.pagelayout import PageLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 
-from kivy.properties import ObjectProperty, StringProperty, BooleanProperty
+from kivy.properties import ObjectProperty, StringProperty, BooleanProperty, NumericProperty
 
-class RecipePane(BoxLayout):
-	pass
+class RecipePane(ScrollView):
+	grid = ObjectProperty(None)
 
 class RecipeOverview(RecipePane):
 	
@@ -26,19 +27,26 @@ class RecipeIngredients(RecipePane):
 	
 	def loadRecipe(self,val):
 		self.val = val
-		self.name = 'Ingredients'
+		self.name = '\n\nIngredients'
 		for i in val['ingredients']:
 			l = Label()
-			l.text = str(i['quantity'])+i['units']+"     of "+i['ingredient']
-			self.add_widget(l)
+			l.text_size = self.width, None
+			l.size_hint_y = None
+			l.height = 200
+			l.text = str(i['quantity'])+i['units']+" "+i['ingredient']
+			self.grid.add_widget(l)
 
 class RecipeSteps(RecipePane):
 	
 	name = StringProperty("Loading...")
+	width_p = NumericProperty(400)
 	
 	def loadRecipe(self,val):
 		self.val = val
-		self.name = 'Instructions'
+		self.name = '\n\nInstructions'
 		for i in val['instructions']:
 			l = Label(text=i)
-			self.add_widget(l)
+			l.text_size = 400, None
+			l.size_hint_y = None
+			l.height = 200
+			self.grid.add_widget(l)
