@@ -19,7 +19,7 @@ class RecipeOverview(RecipePane):
 	
 	def loadRecipe(self,val):
 		self.val = val
-		self.name = val['name']
+		self.name = "\n\n\n\n" + val['name']
 
 class RecipeIngredients(RecipePane):
 	
@@ -30,9 +30,9 @@ class RecipeIngredients(RecipePane):
 		self.name = '\n\nIngredients'
 		for i in val['ingredients']:
 			l = Label()
-			l.text_size = self.width, None
+			l.text_size = 800, None
 			l.size_hint_y = None
-			l.height = 200
+			l.height = 400
 			l.text = str(i['quantity'])+i['units']+" "+i['ingredient']
 			self.grid.add_widget(l)
 
@@ -46,7 +46,7 @@ class RecipeSteps(RecipePane):
 		self.name = '\n\nInstructions'
 		for i in val['instructions']:
 			l = Label(text=i)
-			l.text_size = 400, None
+			l.text_size = 800, None
 			l.size_hint_y = None
-			l.height = 200
+			l.height = 400
 			self.grid.add_widget(l)

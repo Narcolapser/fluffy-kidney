@@ -63,6 +63,7 @@ class FluffyKidney(GridLayout):
 		grid = self.ids['info_grid']
 		rlist = self.ids['recipe_list']
 		for i in files:
+			print(i)
 			if i[-5:] != ".json":
 				continue
 			with open(join(data_dir,i)) as f:
@@ -76,9 +77,10 @@ class FluffyKidney(GridLayout):
 				recipe.loadRecipe(val,grid)
 				rlist.add_widget(recipe)
 		#rUrl = '''http://allrecipes.com/recipe/24352/easy-apple-cinnamon-muffins/'''
-		#recipe = ListRecipe()
-		#recipe.loadRecipe(allrecipes.getRecipe(rUrl),grid)
-		#rlist.add_widget(recipe)
+		rUrl = '''http://allrecipes.com/recipe/6925/monkey-bread-v/'''
+		recipe = ListRecipe()
+		recipe.loadRecipe(allrecipes.getRecipe(rUrl),grid)
+		rlist.add_widget(recipe)
 
 class FluffyKidneyApp(App):
 
