@@ -77,7 +77,8 @@ class FluffyKidney(GridLayout):
 				recipe.loadRecipe(val,grid)
 				rlist.add_widget(recipe)
 		#rUrl = '''http://allrecipes.com/recipe/24352/easy-apple-cinnamon-muffins/'''
-		rUrl = '''http://allrecipes.com/recipe/6925/monkey-bread-v/'''
+		#rUrl = '''http://allrecipes.com/recipe/6925/monkey-bread-v/'''
+		rUrl = '''http://allrecipes.com/recipe/7324/angel-food-cake-i/'''
 		recipe = ListRecipe()
 		recipe.loadRecipe(allrecipes.getRecipe(rUrl),grid)
 		rlist.add_widget(recipe)
