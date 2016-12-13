@@ -7,6 +7,7 @@ from kivy.uix.pagelayout import PageLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
+from kivy.uix.image import AsyncImage
 
 from kivy.properties import ObjectProperty, StringProperty, BooleanProperty, NumericProperty
 
@@ -20,6 +21,10 @@ class RecipeOverview(RecipePane):
 	def loadRecipe(self,val):
 		self.val = val
 		self.name = "\n\n\n\n" + val['name']
+
+#AsyncImage(source='http://mywebsite.com/logo.png')
+class RecipePicture(AsyncImage):
+	pass
 
 class RecipeIngredients(RecipePane):
 	
