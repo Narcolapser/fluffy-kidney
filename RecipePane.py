@@ -29,24 +29,32 @@ class RecipeIngredients(RecipePane):
 		self.val = val
 		self.name = '\n\nIngredients'
 		for i in val['ingredients']:
-			l = Label()
-			l.text_size = 800, None
-			l.size_hint_y = None
-			l.height = 400
-			l.text = str(i['quantity'])+i['units']+" "+i['ingredient']
+			l = RecipeIngredient(i)
 			self.grid.add_widget(l)
+
+class RecipeIngredient(BoxLayout):
+	name = StringProperty("Loading...")
+	quantity = StringProperty("Loading...")
+	units = StringProperty("Loading...")
+	def __init__(self, ingredient, **kwargs):
+		self.ingred = ingredient
+		self.quantity = ingredient['quantity']
+		self.units = ingredient['units']
+		self.name = ingredient['ingredient']
+		super(RecipeIngredient, self).__init__(**kwargs)
 
 class RecipeSteps(RecipePane):
 	
 	name = StringProperty("Loading...")
-	width_p = NumericProperty(400)
+	width_p = NumericProperty(0)
 	
 	def loadRecipe(self,val):
 		self.val = val
-		self.name = '\n\nInstructions'
+		self.name = '\n\nInstructions\n\n'
 		for i in val['instructions']:
-			l = Label(text=i)
-			l.text_size = 800, None
-			l.size_hint_y = None
-			l.height = 400
+			l = RecipeStep(text=i)
 			self.grid.add_widget(l)
+
+class RecipeStep(Label):
+	pass
+

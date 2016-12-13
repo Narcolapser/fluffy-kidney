@@ -64,16 +64,48 @@
 		size_hint_y: None
 		height: self.minimum_height
 		Label:
+			size_hint_y: None
+			text_size: self.width - 20, None
+			height: self.texture_size[1]
+			halign: 'center'
 			text: root.name
+
+<RecipeIngredient>:
+	size_hint_y: None
+	Label:
+		text: root.quantity
+		size_hint_x: 0.1
+		halign: 'left'
+		text_size: self.width - 20, None
+	Label:
+		text: root.units
+		size_hint_x: 0.2
+		halign: 'left'
+		text_size: self.width - 20, None
+	Label:
+		text: root.name
+		size_hint_x: 0.7
+		halign: 'left'
+		text_size: self.width - 20, None
+
+
 
 <RecipeSteps>:
 	grid: contents
-	width_p: self.size[0]
+	width_p: self.width
 	GridLayout:
 		id: contents
 		cols: 1
 		size_hint_y: None
 		height: self.minimum_height
 		Label:
+			size_hint_y: None
 			text_size: self.width - 20, None
+			height: self.texture_size[1]
+			halign: 'center'
 			text: root.name
+
+<RecipeStep>:
+	size_hint_y: None
+	text_size: self.width - 20, None
+	height: self.texture_size[1] + 20
