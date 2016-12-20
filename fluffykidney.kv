@@ -1,31 +1,93 @@
 #:kivy 1.9.1
 
+<MainMenuScreen>:
+	BoxLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: (0.3,1)
+			Button:
+				text: "This Week"
+				on_release: root.openMealPlan()
+			Button:
+				text: "Meal Plan Editor"
+				on_release: root.openMealPlanEditor()
+			Button:
+				text: "Recipe Search"
+			Button:
+				text: "Settings"
+		BoxLayout:
+			size_hint: (0.7,1)
 
-<FluffyKidney>:
-	canvas:
-		Color:
-			rgba: 1,1,1,1
-		Rectangle:
-			size: 20,self.height
-			pos: 290,0
-	cols: 2
-	ScrollView:
-		size_hint_x: None
-		width: 300
-		GridLayout
-			id: recipe_list
-			cols: 1
-			size_hint_y:None
-			height: self.minimum_height
+<MealPlanScreen>:
 	GridLayout:
-		id: info_grid
-		cols:1
+		canvas:
+			Color:
+				rgba: 1,1,1,1
+			Rectangle:
+				size: 20,self.height
+				pos: self.width*(0.231),0
+		cols: 2
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: (0.3,1)
+			ScrollView:
+				GridLayout:
+					id: recipe_list
+					cols: 1
+					size_hint_y:None
+					height: self.minimum_height
+			BoxLayout:
+				height: 50
+				size_hint_y: None
+				Button:
+					text: "Back"
+					on_release: root.openMainMenu()
+		GridLayout:
+			id: info_grid
+			cols:1
+
+<MealPlanEditorScreen>:
+	GridLayout:
+		canvas:
+			Color:
+				rgba: 1,1,1,1
+			Rectangle:
+				size: 20,self.height
+				pos: self.width*(0.231),0
+		cols: 2
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: (0.3,1)
+			ScrollView:
+				TreeView:
+					id: plan_list
+					cols: 1
+					size_hint_y:None
+					height: self.minimum_height
+			BoxLayout:
+				height: 50
+				size_hint_y: None
+				Button:
+					text: "New"
+					on_release: root.newMealPlan()
+				Button:
+					text: "Duplicate"
+				Button:
+					text: "Delete"
+			BoxLayout:
+				height: 50
+				size_hint_y: None
+				Button:
+					text: "Back"
+					on_release: root.openMainMenu()
+		GridLayout:
+			id: info_grid
+			cols:1
 
 <ListRecipe>:
 	size_hint_y: None
-	size_hint_x: None
+	size_hint_x: 1
 	height: 60
-	width: 290
 	on_release: root.selected()
 	text: root.name
 
@@ -119,3 +181,11 @@
 	size_hint_y: None
 	text_size: self.width - 20, None
 	height: self.texture_size[1] + 20
+	
+
+#			canvas:
+#				Color:
+#					rgba: 0.5,0,1,0.5
+#				Rectangle:
+#					size: self.size
+#					pos: self.pos
