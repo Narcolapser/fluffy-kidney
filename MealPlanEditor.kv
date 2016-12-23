@@ -1,0 +1,84 @@
+<MealPlanEditorScreen>:
+	GridLayout:
+		canvas:
+			Color:
+				rgba: 1,1,1,1
+			Rectangle:
+				size: 20,self.height
+				pos: self.width*(0.231),0
+		cols: 2
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: (0.3,1)
+			ScrollView:
+				TreeView:
+					id: plan_list
+					cols: 1
+					size_hint_y:None
+					height: self.minimum_height
+			BoxLayout:
+				height: 50
+				size_hint_y: None
+				Button:
+					text: "New"
+					on_release: root.newMealPlan()
+				Button:
+					text: "Duplicate"
+				Button:
+					text: "Delete"
+			BoxLayout:
+				height: 50
+				size_hint_y: None
+				Button:
+					text: "Back"
+					on_release: root.openMainMenu()
+		GridLayout:
+			id: info_grid
+			cols:1
+
+
+<MealPlanEditor>:
+	orientation: 'vertical'
+	BoxLayout:
+		size_hint: (1,None)
+		height: 50
+		Label:
+			text:'Menu Name'
+		TextInput:
+			id: menu_name
+			on_text: root.rename(args[1])
+	BoxLayout:
+		size_hint: (1,None)
+		height: 50
+		Label:
+			text: 'active from:'
+		GridLayout:
+			cols: 3
+			Label:
+				text: 'Year'
+			Label:
+				text: 'Month'
+			Label:
+				text: 'Day'
+			TextInput:
+			TextInput:
+			TextInput:
+	BoxLayout:
+		size_hint:(1,None)
+		height: 50
+		Label:
+			text: 'Currently Planned Meals:'
+	ScrollView:
+		GridLayout:
+			size_hint:(1,None)
+			height: self.minimum_height
+			row_default_height: 30
+			cols: 4
+			Label:
+				text: "Which Meal"
+			Label:
+				text: "Bagels"
+			Label:
+				text: "Which Day"
+			Button:
+				text: 'Add'

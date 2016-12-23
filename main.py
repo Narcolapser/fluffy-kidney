@@ -26,6 +26,7 @@ from kivy.properties import ObjectProperty, StringProperty, BooleanProperty
 from kivy.storage.jsonstore import JsonStore
 
 from RecipePane import *
+from MealPlanEditor import *
 
 class ListRecipe(Button):
 	name = StringProperty("Loading...")
@@ -91,30 +92,6 @@ class MealPlanScreen(Screen):
 	def openMainMenu(self):
 		self.app.sm.current = 'main_menu'
 
-class MealPlanEditorScreen(Screen):
-
-	def loadPlans(self):
-		files = os.listdir(self.app.data_dir)
-		grid = self.ids['info_grid']
-		plist = self.ids['plan_list']
-		
-		for i in files:
-			if 'meal_plan' in i:
-				print(i)
-				with open(join(self.app.data_dir,i)) as f:
-					try:
-						val = json.load(f)
-					except Exception as e:
-						print(e)
-
-	def openMainMenu(self):
-		self.app.sm.current = 'main_menu'
-		
-	def newMealPlan(self):
-		plist = self.ids['plan_list']
-		gt = GetText()
-		gt.ask()
-
 class MainMenuScreen(Screen):
 	
 	def openMealPlan(self):
@@ -136,30 +113,6 @@ class MainMenuScreen(Screen):
 class FKScreenManager(ScreenManager):
 	pass
 
-class GetText(Popup):
-	def __init__(self,**kwargs):
-		self.content = BoxLayout(orientation="vertical")
-		self.content.add_widget(Label(text="Enter meal plan name:"))
-		self.ins = TextInput(multiline=False)
-		self.content.add_widget(self.ins)
-		self.ok_button = Button(text="Ok")
-		self.content.add_widget(self.ok_button)
-		self.ok_button.bind(on_release=self.done)
-		self.pevent = Event()
-		
-		super(GetText,self).__init__(content=self.content,**kwargs)
-	
-	def ask(self):
-		self.open()
-		print("popup opened. waiting...")
-		print("Woken up!")
-		print(self.val)
-		return self.val
-	
-	def done(self,*args):
-		print(self.ins.text)
-		self.val = self.ins.text
-
 class FluffyKidneyApp(App):
 
 	def build(self):
@@ -172,13 +125,14 @@ class FluffyKidneyApp(App):
 		self.main_menu_screen.app = self
 		self.sm.add_widget(self.main_menu_screen)
 
-#	def on_pause(self):
-#		return True
-
-#	def on_resume(self):
-#		pass
-
 		return self.sm
+
+	def on_pause(self):
+		return True
+
+	def on_resume(self):
+		pass
+
 
 app = None
 if __name__ == '__main__':

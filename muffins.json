@@ -1,0 +1,77 @@
+{  
+   "instructions":[  
+      "Preheat oven to 400 degrees F (200 degrees C). Grease six muffin cups or line with paper muffin liners.",
+      "Stir together 1 1/2 cup flour, 3/4 cup sugar, salt, baking powder and 1 teaspoon cinnamon. Mix in oil, egg and milk. Fold in apples. Spoon batter into prepared muffin cups, filling to the top of the cup.",
+      "In a small bowl, stir together 1/2 cup sugar, 1/3 cup flour, butter and 1 1/2 teaspoons cinnamon. Mix together with fork and sprinkle over unbaked muffins.",
+      "Bake in preheated oven for 20 to 25 minutes, until a toothpick inserted into center of a muffin comes out clean.",
+      ""
+   ],
+   "name":"Easy Apple Cinnamon Muffins Recipe",
+   "ingredients":[  
+      {  
+         "units":"1/2",
+         "ingredient":"cups all-purpose flour",
+         "quantity":"1"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"white sugar",
+         "quantity":"3/4"
+      },
+      {  
+         "units":"teaspoon",
+         "ingredient":"salt",
+         "quantity":"1/2"
+      },
+      {  
+         "units":"teaspoons",
+         "ingredient":"baking powder",
+         "quantity":"2"
+      },
+      {  
+         "units":"teaspoon",
+         "ingredient":"ground cinnamon",
+         "quantity":"1"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"vegetable oil",
+         "quantity":"1/3"
+      },
+      {  
+         "units":"egg",
+         "ingredient":"",
+         "quantity":"1"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"milk",
+         "quantity":"1/3"
+      },
+      {  
+         "units":"apples",
+         "ingredient":"- peeled, cored and chopped",
+         "quantity":"2"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"white sugar",
+         "quantity":"1/2"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"all-purpose flour",
+         "quantity":"1/3"
+      },
+      {  
+         "units":"cup",
+         "ingredient":"butter, cubed",
+         "quantity":"1/2"
+      },
+      {  
+         "units":"1/2",
+         "ingredient":"teaspoons ground cinnamon",
+         "quantity":"1"
+      }
+   ]
+}
